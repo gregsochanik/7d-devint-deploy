@@ -12,6 +12,6 @@ IF NOT "%VIRTUAL_APP%"=="not_used" (
 
 %BIN_FOLDER%\psftp.exe %SERVER% -i %KEY_FOLDER%\Key.ppk -l %SSH_USER% -b put.bat
 
-%BIN_FOLDER%\PLINK -i %KEY_FOLDER%\Key.ppk -P 22 %SSH_USER%%SERVER% -batch temp.bat
+%BIN_FOLDER%\PLINK -i %KEY_FOLDER%\Key.ppk -P 22 %SSH_USER%@%SERVER% -batch temp.bat
 
 curl.bat
