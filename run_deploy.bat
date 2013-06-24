@@ -10,6 +10,10 @@ IF NOT "%VIRTUAL_APP%"=="not_used" (
 	type add-app-to-website.bat >> temp.bat
 )
 
+IF NOT "%SSL_CERT_ID%"=="not_used" (
+	type add-ssl.bat >> temp.bat
+)
+
 %BIN_FOLDER%\psftp.exe %SERVER% -i %KEY_FOLDER%\Key.ppk -l %SSH_USER% -b put.bat
 
 %BIN_FOLDER%\PLINK -i %KEY_FOLDER%\Key.ppk -P 22 %SSH_USER%@%SERVER% -batch temp.bat
