@@ -1,1 +1,0 @@
-Invoke-WebRequest http://teamcity.sochanik.co.uk:8111/guestAuth/repository/download/bt14/PROD.tcbuildtag/site.zip -OutFile ./sitefiles/site.zip
