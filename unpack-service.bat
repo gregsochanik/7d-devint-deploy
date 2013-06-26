@@ -1,7 +1,7 @@
 SET target=%1
 SET env=%2
 SET login=sshduser
-SET webroot=C:/inetpub/%3/
+SET webroot=%3
 SET filename=%4
 SET output=%5
 
