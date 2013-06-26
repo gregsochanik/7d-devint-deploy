@@ -10,7 +10,7 @@ IF NOT "%VIRTUAL_APP%"=="not_used" (
 	type add-app-to-website.bat >> temp.bat
 )
 
-IF NOT "%SSL_CERT_ID%"=="not_used" (
+IF NOT "%SSL_PORT%"=="not_used" (
 	type add-ssl.bat >> temp.bat
 )
 
