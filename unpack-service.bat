@@ -1,8 +1,1 @@
-SET target=%1
-SET env=%2
-SET login=sshduser
-SET webroot=%3
-SET filename=%4
-SET output=%5
-
-c:\TeamCityBuildTools\PLINK -i c:\TeamCityBuildTools\DeploymentKeyConfig\Key.ppk -P 22 %login%@%target%:%webroot%%env%_deploy C:/7zip/7za.exe x %webroot%%env%_deploy/\*.zip -o%webroot%%env%/%output% -y
+C:/7zip/7za.exe x %WEBBROOT%%ENV_NAME%_deploy/\*.zip -o%WEBROOT%%ENV_NAME% -y
