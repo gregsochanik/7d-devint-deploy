@@ -20,7 +20,7 @@ REM delete site
 %appcmd% list site /site.name:%HOST% /xml | %appcmd% delete site %HOST% /in
 
 REM add new site
-%appcmd% add sites /name:%HOST% /id:%ID% /bindings:%BINDINGS% /physicalPath:%WEBROOT%
+%appcmd% add sites /name:%HOST% /id:%ID% /bindings:%BINDINGS% /physicalPath:%WEBROOT%%ENV_NAME%
 
 REM set app pool
 %appcmd% set app "%HOST%/" /applicationPool:%HOST% 

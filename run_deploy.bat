@@ -4,6 +4,7 @@ CALL environments\%1.bat
 
 type environments\%1.bat > temp.bat
 echo. >> temp.bat
+type setup-dirs.bat >> temp.bat
 type add-website.bat >> temp.bat
 
 IF NOT "%VIRTUAL_APP%"=="not_used" (
