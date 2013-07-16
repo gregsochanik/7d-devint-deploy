@@ -1,2 +1,2 @@
-cd C:/inetpub/7d-dummy/uat_deploy
+cd %WINROOT%%ENV_NAME%_deploy
 C:/7zip/7za.exe x \*.zip -o../%ENV_NAME% -y
