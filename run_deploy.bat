@@ -15,17 +15,17 @@ IF NOT "%SSL_PORT%"=="not_used" (
 	type add-ssl.bat >> temp.bat
 )
 
-echo cd /C/Users/sshduser > temp-put.bat
+echo cd /home/sshduser > temp-put.bat
 echo mkdir %APP% >> temp-put.bat
 echo cd %APP% >> temp-put.bat
 echo mput temp.bat >> temp-put.bat
 echo chmod 744 temp.bat >> temp-put.bat
-echo cd /%WWWROOT% >> temp-put.bat
-echo mkdir /%WEBROOT% >> temp-put.bat
-echo cd /%WEBROOT%/ >> temp-put.bat
-echo mkdir "%ENV_NAME%" >> temp-put.bat
-echo mkdir "%ENV_NAME%_deploy" >> temp-put.bat
-echo cd "%ENV_NAME%_deploy" >> temp-put.bat
+echo cd %WWWROOT% >> temp-put.bat
+echo mkdir %WEBROOT% >> temp-put.bat
+echo cd %WEBROOT%/ >> temp-put.bat
+echo mkdir %ENV_NAME% >> temp-put.bat
+echo mkdir %ENV_NAME%_deploy >> temp-put.bat
+echo cd %ENV_NAME%_deploy >> temp-put.bat
 echo mput sitefiles/*.* >> temp-put.bat
 
 REM - Put all files on server
