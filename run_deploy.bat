@@ -2,10 +2,15 @@ CALL settings\conf.bat
 
 CALL environments\%1.bat
 
+SET SETUP_WEBSITE=%2
+
 type environments\%1.bat > temp.bat
 echo. >> temp.bat
 type unpack-service.bat >> temp.bat
-type add-website.bat >> temp.bat
+
+IF NOT "%SETUP_WEBSITE%"=="false" (
+	type add-website.bat >> temp.bat
+)
 
 IF NOT "%VIRTUAL_APP%"=="not_used" (
 	type add-app-to-website.bat >> temp.bat
