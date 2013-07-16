@@ -33,5 +33,6 @@ REM - Put all files on server
 
 REM - Run the setup script in full on the server - NB Cygwin style path spec
 %BIN_FOLDER%\PLINK -i %KEY_FOLDER%\Key.ppk -P 22 %SSH_USER%@%SERVER% -batch ./%APP%/temp.bat 
+echo %ERRORLEVEL%
 
 curl.bat
