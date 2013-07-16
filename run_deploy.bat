@@ -5,7 +5,7 @@ CALL environments\%1.bat
 SET SETUP_WEBSITE=%2
 
 type environments\%1.bat > temp.bat
-echo. >> temp.bat
+type defaults.bat >> temp.bat
 type unpack-service.bat >> temp.bat
 
 IF NOT "%SETUP_WEBSITE%"=="false" (

@@ -1,4 +1,4 @@
-SET appcmd="C:\Windows\System32\inetsrv\appcmd.exe"
+REM appcmd=%appcmd%
 
 if not defined APP (
 echo "APP not defined, quitting"

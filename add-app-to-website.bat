@@ -1,4 +1,4 @@
-REM appcmd="C:\Windows\System32\inetsrv\appcmd.exe"
+REM appcmd=%appcmd%
 
 REM website named %HOST% and app pool named %HOST% must already exist - %VIRTUAL_APP% must have leading forwardslash(/)
 
