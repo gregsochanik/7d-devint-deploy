@@ -19,6 +19,7 @@ echo cd /C/Users/sshduser > temp-put.bat
 echo mkdir %APP% >> temp-put.bat
 echo cd %APP% >> temp-put.bat
 echo mput temp.bat >> temp-put.bat
+echo chmod 744 temp.bat >> temp-put.bat
 echo cd /%WWWROOT% >> temp-put.bat
 echo mkdir /%WEBROOT% >> temp-put.bat
 echo cd /%WEBROOT%/ >> temp-put.bat
