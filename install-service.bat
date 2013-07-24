@@ -1,1 +1,1 @@
-c:\TeamCityBuildTools\PLINK.exe -i c:\TeamCityBuildTools\DeploymentKeyConfig\Key.ppk -P 22 %SSH_USER%@%SERVER% C:/Windows/Microsoft.NET/Framework/v4.0.30319/InstallUtil %WEBROOT%%ENV%/%SERVICE_FILE_NAME% 
+C:/Windows/Microsoft.NET/Framework/v4.0.30319/InstallUtil %WEBROOT%%ENV%/%SERVICE_FILE_NAME% 
