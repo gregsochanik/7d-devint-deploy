@@ -2,4 +2,4 @@ net stop \"%SERVICE_NAME%\" | echo
 
 timeout /T 5
 
-C:/Windows/Microsoft.NET/Framework/v4.0.30319/InstallUtil -u  %WEBROOT%%ENV%/%SERVICE_FILE_NAME%
+C:/Windows/Microsoft.NET/Framework/v4.0.30319/InstallUtil -u  %ROOT%%ENV%/%SERVICE_FILE_NAME%
