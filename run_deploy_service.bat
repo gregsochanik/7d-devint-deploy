@@ -58,3 +58,5 @@ REM - Run the setup script in full on the server - NB Cygwin style path spec
 echo %ERRORLEVEL%
 
 REM  - Need something here to test service is OK curl.bat
+%BIN_FOLDER%\PLINK -i %KEY_FOLDER%\Key.ppk -P 22 %SSH_USER%@%SERVER% sc query %SERVICE_NAME% | findstr /i "STATE"
+
