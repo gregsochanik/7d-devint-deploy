@@ -19,9 +19,9 @@ IF "%SERVICE_NAME%"=="" (
 CALL settings\conf.bat
 CALL environments\%1.bat
 
-echo SET SERVICE_FILE_NAME=%SERVICE_FILE_NAME% > temp.bat
+echo SET SERVICE_FILE_NAME=%SERVICE_FILE_NAME% >> temp.bat
 echo. >> temp.bat
-echo SET SERVICE_NAME=%SERVICE_NAME% > temp.bat
+echo SET SERVICE_NAME=%SERVICE_NAME% >> temp.bat
 echo. >> temp.bat
 type environments\%1.bat > temp.bat
 echo. >> temp.bat
