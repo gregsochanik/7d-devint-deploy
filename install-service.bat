@@ -1,10 +1,24 @@
-SET target=%1
-SET env=%2
-SET servicename=%3
-SET file=%4
-SET login=sshduser
-SET webroot=%5
+SET SERVICE_FILE_NAME=%2
+SET SERVICE_NAME=%3
 
-c:\TeamCityBuildTools\PLINK.EXE -i c:\TeamCityBuildTools\DeploymentKeyConfig\Key.ppk -P 22 %login%@%target%:%webroot%%env% C:/Windows/Microsoft.NET/Framework/v4.0.30319/InstallUtil %webroot%%env%/%file% 
+IF "%1"=="" (
+	echo ERROR - You need to specify the environment first parameter
+	exit /b 1
+)
 
-c:\TeamCityBuildTools\PLINK.EXE -i c:\TeamCityBuildTools\DeploymentKeyConfig\Key.ppk -P 22 %login%@%target%:%webroot%%env% net start %servicename%
+IF "%SERVICE_FILE_NAME%"=="" (
+	echo ERROR - You need to specify the service filename as the second parameter 	
+	exit /b 1
+)
+
+IF "%SERVICE_NAME%"=="" (
+	echo ERROR - You need to specify the service name as the third parameter
+	exit /b 1
+)
+
+CALL settings\conf.bat
+CALL environments\%1.bat
+
+c:\TeamCityBuildTools\PLINK.EXE -i c:\TeamCityBuildTools\DeploymentKeyConfig\Key.ppk -P 22 %SSH_USER%@%SERVER%:%WINROOT%%ENV_NAME% C:/Windows/Microsoft.NET/Framework/v4.0.30319/InstallUtil %WINROOT%%ENV_NAME%/%SERVICE_FILE_NAME% 
+
+c:\TeamCityBuildTools\PLINK.EXE -i c:\TeamCityBuildTools\DeploymentKeyConfig\Key.ppk -P 22 %SSH_USER%@%SERVER%:%WINROOT%%ENV_NAME% net start %SERVICE_NAME%
