@@ -1,10 +1,5 @@
 REM appcmd=%appcmd%
 
-if not defined APP (
-echo "APP not defined, quitting"
-exit /b 1
-)
-
 if %APP% == "" (
 echo "APP is empty, quitting"
 exit /b 1
