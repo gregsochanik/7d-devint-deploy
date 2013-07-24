@@ -1,0 +1,5 @@
+Microsoft (R) .NET Framework Installation utility Version 4.0.30319.1
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Exception occurred while initializing the installation:
+System.IO.FileNotFoundException: Could not load file or assembly 'file:///C:\cygwin_new\home\sshduser\0' or one of its dependencies. The system cannot find the file specified..
