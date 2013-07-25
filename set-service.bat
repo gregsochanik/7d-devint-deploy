@@ -1,5 +1,5 @@
-SET SERVICE_NAME=%2
-SET ACTION=%3
+SET ACTION=%2
+SET SERVICE_NAME=%3
 
 IF "%1"=="" (
 	echo ERROR - You need to specify the environment first parameter
