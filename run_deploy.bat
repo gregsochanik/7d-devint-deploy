@@ -1,5 +1,9 @@
-CALL settings\conf.bat
+IF "%1"=="" (
+	echo ERROR - You need to specify the environment first parameter
+	exit /b 1
+)
 
+CALL settings\conf.bat
 CALL environments\%1.bat
 
 SET SETUP_WEBSITE=%2
@@ -32,7 +36,9 @@ echo cd %WWWROOT% >> temp-put.bat
 echo mkdir %WEBROOT% >> temp-put.bat
 echo cd %WEBROOT%/ >> temp-put.bat
 echo mkdir %ENV_NAME% >> temp-put.bat
+echo chmod 755 %ENV_NAME% >> temp-put.bat
 echo mkdir %ENV_NAME%_deploy >> temp-put.bat
+echo chmod 755 %ENV_NAME%_deploy >> temp-put.bat
 echo cd %ENV_NAME%_deploy >> temp-put.bat
 echo mput sitefiles/*.* >> temp-put.bat
 
