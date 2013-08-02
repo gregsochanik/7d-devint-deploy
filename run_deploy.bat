@@ -36,9 +36,8 @@ echo cd %WWWROOT% >> temp-put.bat
 echo mkdir %WEBROOT% >> temp-put.bat
 echo cd %WEBROOT%/ >> temp-put.bat
 echo mkdir %ENV_NAME% >> temp-put.bat
-echo chmod 755 %ENV_NAME% >> temp-put.bat
 echo mkdir %ENV_NAME%_deploy >> temp-put.bat
-echo chmod 755 %ENV_NAME%_deploy >> temp-put.bat
+echo chmod 755 -R * >> temp-put.bat
 echo cd %ENV_NAME%_deploy >> temp-put.bat
 echo mput sitefiles/*.* >> temp-put.bat
 
