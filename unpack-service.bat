@@ -1,6 +1,6 @@
 cd /d %WINROOT%
 
-chgrp -hR Administrators * 
+REM chgrp -hR Administrators * 
 
 ls -l
 
