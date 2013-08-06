@@ -13,5 +13,5 @@ cd /d %WINROOT%
 
 chgrp -hR Administrators * 
 
-REM Delete deploys older than 1 day
-forfiles /m %ENV_NAME%_* /d -1 /c "cmd /c rmdir /s /q @FILE"
+REM Delete deploys older than 7 days
+forfiles /m %ENV_NAME%_* /d -7 /c "cmd /c rmdir /s /q @FILE"
