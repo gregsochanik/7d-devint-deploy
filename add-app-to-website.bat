@@ -10,5 +10,8 @@ IF NOT "%WEBSITE_SET%"=="true" (
 
 %appcmd% add app /site.name:%HOST% /path:%VIRTUAL_APP% /physicalPath:%VIRTUAL_APP_ROOT%
 
+REM 2. set physicalpath for app to %VIRTUAL_APP_ROOT%
+%appcmd% set app "%HOST%%VIRTUAL_APP%" /physicalPath:%VIRTUAL_APP_ROOT%
+
 REM 2. set apppool for app to %HOST%
 %appcmd% set app "%HOST%%VIRTUAL_APP%" /applicationPool:%HOST% 
