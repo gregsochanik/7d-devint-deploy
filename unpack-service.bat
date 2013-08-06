@@ -9,6 +9,9 @@ set NEW_FOLDER=%ENV_NAME%_%RANDOM%%RANDOM%
 REM - unzip to this folder
 C:/7zip/7z.exe x *.zip -o../%NEW_FOLDER% -y
 
+REM - unzip to original folder for now until we can solve the "service" version problem
+C:/7zip/7z.exe x *.zip -o../%ENV_NAME% -y
+
 cd /d %WINROOT%
 
 chgrp -hR Administrators * 
