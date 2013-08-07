@@ -20,6 +20,9 @@ Invoke-WebRequest $teamCityServer/guestAuth/repository/download/$buildId/$buildT
 #pull down PROD production environment files (e.g. web.config etc)
 Invoke-WebRequest $teamCityServer/guestAuth/repository/download/$buildId/$buildTag.tcbuildtag/prod/prod.zip -OutFile $live_deploy/sitefiles/prod.zip
 
+#pull down Smoke tests files (e.g. web.config etc)
+Invoke-WebRequest $teamCityServer/guestAuth/repository/download/$buildId/$buildTag.tcbuildtag/smokes.zip -OutFile $live_deploy/smokes.zip
+
 # pull down project deploy scripts
 Invoke-WebRequest $teamCityServer/guestAuth/repository/download/$buildId/$buildTag.tcbuildtag/deploy.zip -OutFile $live_deploy/deploy.zip
 
