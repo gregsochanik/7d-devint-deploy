@@ -11,6 +11,9 @@ REM Delete apppool
 REM Create apppool
 %appcmd% add apppool /apppool.name:%HOST% /managedRuntimeVersion:%APPOOLRUNTIMEVERSION%
 
+REM Set to never recycle (fix memory leaks instead)
+%appcmd% add apppool /apppool.name:%HOST% /recycling.periodicRestart.time:00:00:00
+
 REM delete site
 %appcmd% list site /site.name:%HOST% /xml | %appcmd% delete site %HOST% /in
 
