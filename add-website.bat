@@ -14,6 +14,9 @@ REM Create apppool
 REM Set to never recycle (fix memory leaks instead)
 %appcmd% set apppool /apppool.name:%HOST% /recycling.periodicRestart.time:00:00:00
 
+REM Set to no idle timeout
+%appcmd% set config /section:applicationPools /[name='%HOST%'].processModel.idleTimeout:0.00:00:00
+
 REM delete site
 %appcmd% list site /site.name:%HOST% /xml | %appcmd% delete site %HOST% /in
 
