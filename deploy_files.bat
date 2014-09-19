@@ -19,7 +19,7 @@ echo mkdir %ENV_NAME% >> temp-put.bat
 echo mkdir %ENV_NAME%_deploy >> temp-put.bat
 echo chmod 755 -R * >> temp-put.bat
 echo cd %ENV_NAME%_deploy >> temp-put.bat
-echo rm -fr ** >> temp-put.bat
+echo rm ** >> temp-put.bat
 echo mput sitefiles/*.* >> temp-put.bat
 
 REM - Put all files on server
