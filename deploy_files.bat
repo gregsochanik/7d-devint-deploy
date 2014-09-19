@@ -1,12 +1,4 @@
-IF "%1"=="" (
-	echo ERROR - You need to specify the environment first parameter
-	exit /b 1
-)
-
-CALL settings\conf.bat
 CALL environments\%1.bat
-
-SET SETUP_WEBSITE=%2
 
 type environments\%1.bat > temp.bat
 echo. >> temp.bat
@@ -14,18 +6,6 @@ type defaults.bat >> temp.bat
 echo. >> temp.bat
 type unpack-service.bat >> temp.bat
 echo. >> temp.bat
-
-IF NOT "%SETUP_WEBSITE%"=="false" (
-	type add-website.bat >> temp.bat
-)
-
-IF NOT "%VIRTUAL_APP%"=="not_used" (
-	type add-app-to-website.bat >> temp.bat
-)
-
-IF NOT "%SSL_PORT%"=="not_used" (
-	type add-ssl.bat >> temp.bat
-)
 
 echo cd /home/sshduser > temp-put.bat
 echo mkdir %APP% >> temp-put.bat
@@ -48,5 +28,3 @@ REM - Put all files on server
 REM - Run the setup script in full on the server - NB Cygwin style path spec
 %BIN_FOLDER%\PLINK -i %KEY_FOLDER%\Key.ppk -P 22 %SSH_USER%@%SERVER% -batch ./%APP%/temp.bat 
 echo %ERRORLEVEL%
-
-curl.bat
