@@ -1,3 +1,9 @@
+IF "%1"=="" (
+	echo ERROR - You need to specify the environment first parameter
+	exit /b 1
+)
+
+CALL settings\conf.bat
 CALL environments\%1.bat
 
 type environments\%1.bat > temp.bat
