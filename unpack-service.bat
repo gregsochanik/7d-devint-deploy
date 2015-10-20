@@ -1,3 +1,5 @@
+if not exist %WINROOT% mkdir %WINROOT%
+
 cd /d %WINROOT%
 
 ls -l
