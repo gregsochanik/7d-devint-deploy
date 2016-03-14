@@ -19,6 +19,6 @@ IF "%SERVICE_NAME%"=="" (
 CALL settings\conf.bat
 CALL environments\%1.bat
 
-c:\TeamCityBuildTools\PLINK.EXE -i c:\TeamCityBuildTools\DeploymentKeyConfig\Key.ppk -P 22 %SSH_USER%@%SERVER%:%WINROOT%%ENV_NAME% net stop %SERVICE_NAME%
+plink -i c:\TeamCityBuildTools\DeploymentKeyConfig\Key.ppk -P 22 %SSH_USER%@%SERVER%:%WINROOT%%ENV_NAME% net stop %SERVICE_NAME%
 
-c:\TeamCityBuildTools\PLINK.EXE -i c:\TeamCityBuildTools\DeploymentKeyConfig\Key.ppk -P 22 %SSH_USER%@%SERVER%:%WINROOT%%ENV_NAME% C:/Windows/Microsoft.NET/Framework/v4.0.30319/InstallUtil /u  %WINROOT%%ENV_NAME%/%SERVICE_FILE_NAME% | echo 
+plink -i c:\TeamCityBuildTools\DeploymentKeyConfig\Key.ppk -P 22 %SSH_USER%@%SERVER%:%WINROOT%%ENV_NAME% C:/Windows/Microsoft.NET/Framework/v4.0.30319/InstallUtil /u  %WINROOT%%ENV_NAME%/%SERVICE_FILE_NAME% | echo 
